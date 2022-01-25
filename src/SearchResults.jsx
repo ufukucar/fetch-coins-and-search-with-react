@@ -3,10 +3,15 @@ import React from 'react'
 function SearchResults({ searchResults }) {
   return (
     <>
-      <div className="col-lg-12 mb-4">
-        {' '}
-        <h2>Search Results:</h2>
-      </div>
+      {searchResults.length ? (
+        <div className="col-lg-12 mb-4">
+          {' '}
+          <h2>Search Results ({searchResults.length})</h2>
+        </div>
+      ) : (
+        ''
+      )}
+
       {searchResults.map((bitCoin) => {
         return (
           <div className="col-lg-3 mb-3" key={bitCoin.id}>

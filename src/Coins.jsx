@@ -35,31 +35,35 @@ function Coins(props) {
   }, [search])
 
   const getSearchResults = (search) => {
-    // console.log('getREsults param: ', search)
+    console.log('getREsults param: ', search)
 
     //setSearchResults(bitCoins.toLowerCase().includes(search))
 
-    const filteredResults = bitCoins.filter((bitCoin) => {
-      let coin = bitCoin.name.toLowerCase()
-      // console.log('coin: ', coin)
-      return coin.includes(search.toLowerCase())
-    })
-
+    if (search !== '' && search !== undefined) {
+      const filteredResults = bitCoins.filter((bitCoin) => {
+        let coin = bitCoin.name.toLowerCase()
+        // console.log('coin: ', coin)
+        return coin.includes(search.toLowerCase())
+      })
+      setSearchResults(filteredResults)
+    } else {
+      setSearchResults([])
+    }
     //console.log(filteredResults)
-
-    setSearchResults(filteredResults)
   }
 
   //console.log('Coins search: ', search)
 
-  //console.log('Search results: ', searchResults)
+  console.log('Search results: ', searchResults)
 
   //console.log('Coins log: ', bitCoins)
 
   return (
     <div className="row mt-4">
       {searchResults.length ? (
-        <SearchResults searchResults={searchResults} />
+        <>
+          <SearchResults searchResults={searchResults} />
+        </>
       ) : (
         bitCoins.map((bitCoin) => {
           return <Coin bitCoin={bitCoin} key={bitCoin.id} />

@@ -13,7 +13,7 @@ function Header(props) {
           </h3>
           <div className="ml-auto">
             <input
-              type="search"
+              type="text"
               className="form-control w500"
               placeholder="Search here.."
               onChange={(event) => {
