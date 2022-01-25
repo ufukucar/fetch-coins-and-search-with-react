@@ -30,6 +30,12 @@ code {
   width: 500px;
 }
 
+@media screen and (max-width: 600px) {
+  .w500 {
+    max-width: 250px !important;
+  }
+}
+
 .cardIcon {
   max-width: 18%;
   height: auto;

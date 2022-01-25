@@ -4,17 +4,17 @@ function Header(props) {
   return (
     <div className="row">
       <div className="col-lg-12 p-0">
-        <div className="header d-flex p-3 bd-highlight justify-content-left align-items-center">
-          <h3 className=" headerH3">
+        <div className="header d-flex  p-3 bd-highlight justify-content-left align-items-center">
+          <h4 className=" headerH3">
             {' '}
             <a href="/" className="headerH3">
               CYRIPTO COINS
             </a>{' '}
-          </h3>
+          </h4>
           <div className="ml-auto">
             <input
               type="text"
-              className="form-control w500"
+              className="form-control w500 searchInput"
               placeholder="Search here.."
               onChange={(event) => {
                 let value = event.target.value.trim()
