@@ -5,7 +5,7 @@ function SearchResults({ searchResults }) {
     <>
       <div className="col-lg-12 mb-4">
         {' '}
-        <h2>Search Results:</h2>{' '}
+        <h2>Search Results:</h2>
       </div>
       {searchResults.map((bitCoin) => {
         return (
